@@ -6,7 +6,6 @@ import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa'
 const Review = () => {
     const [index, setIndex] = useState(0)
     const { name, job, image, text } = data[index < 0 ? (index * -1) % 4 : (index % 4)]
-    console.log(index)
     return (
         <article className="review">
             <div className="img-container">
@@ -28,7 +27,7 @@ const Review = () => {
                     <FaChevronRight />
                 </button>
             </div>
-            <button className="random-btn">
+            <button onClick={() => setIndex(Math.floor(Math.random() * 4))} className="random-btn">
                 Surpise Me
             </button>
         </article>
